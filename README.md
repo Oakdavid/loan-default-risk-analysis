@@ -18,9 +18,11 @@ This project aims to:
 ---
 
 ## Dataset
-- **Source:** Kaggle (Lending Club Loan Dataset)  
+- **Source:** Kaggle (Lending Club Loan Dataset) 
+- **Link:** https://www.kaggle.com/datasets/wordsforthewise/lending-club
 - **Size:** Reduced to 150,000 rows for performance optimization  
-- **Features:** ~25 relevant columns including:
+
+- **Features:** Over 25 relevant columns including:
   - Loan Amount  
   - Interest Rate  
   - Term  
