@@ -1,116 +1,122 @@
 # Loan Default Risk Analysis (Power BI)
+
 ## Overview
-This project analyzes loan data to identify patterns that lead to loan default.
-It focuses on borrower behavior, loan characteristics, and risk factors to support better lending decisions.
+This project analyzes loan data to identify key factors that drive loan default.  
+It focuses on borrower behavior, loan characteristics, and financial risk patterns to support better lending decisions for cooperative societies and financial institutions.
 
 ---
+
 ## Problem Statement
-Loan default is a major challenge for cooperative societies and financial institutions.
-Poor risk assessment leads to financial losses and reduced lending capacity.
-This project aims to identify key drivers of default and support data-driven loan approval decisions.
+Loan default is a major challenge for lending institutions, leading to financial losses and reduced capital for future loans.  
+Traditional risk assessment methods are often insufficient.
+
+This project aims to:
+- Identify key drivers of loan default  
+- Segment borrowers based on risk level  
+- Support data-driven loan approval decisions  
 
 ---
-## Project Status
-* Dataset acquired and reduced to 150,000 rows for performance optimization
-* Relevant features selected (~25 columns)
-* Data cleaning in progress (Power Query)
-* Data modeling (up next)
-* Dashboard development (planned)
-* Insights and reporting (planned)
----
+
 ## Dataset
-* Source: Kaggle (Lending Club Loan Dataset)
-* Contains borrower, loan, and credit-related attributes
-* Dataset was filtered to 150,000 rows to ensure optimal performance and efficient analysis.
----
-## Data Preparation
-* Removed irrelevant and high-null columns
-* Reduced dataset size for performance
-* Fixed data types (numeric, date, text)
-* Standardized categorical values
-* Cleaned percentage and text fields
-* Created derived features:
-  * Loan-to-Income Ratio
-  * Risk Segmentation
----
-## Analysis Plan
-### Loan Overview
-* Total Loans
-* Total Defaulted Loans
-* Default Rate
-
-### Risk Analysis
-* Default rate by income
-* Default rate by loan amount and term
-* Risk segmentation (Low, Medium, High)
-
-### Behavioral Insights
-* Credit behavior vs default
-* Interest rate vs default
-* Time trends
----
-## Tools
-* Power BI
-* Power Query
-* DAX
----
-## Expected Outcome
-* Identify high-risk borrower segments
-* Highlight key factors driving loan default
-* Provide actionable recommendations for better lending decisions
-It focuses on borrower behavior, loan characteristics, and risk factors to support better lending decisions.
----
-## Problem Statement
-Loan default is a major challenge for cooperative societies and financial institutions.
-Poor risk assessment leads to financial losses and reduced lending capacity.
-This project aims to identify key drivers of default and support data-driven loan approval decisions.
+- **Source:** Kaggle (Lending Club Loan Dataset)  
+- **Size:** Reduced to 150,000 rows for performance optimization  
+- **Features:** ~25 relevant columns including:
+  - Loan Amount  
+  - Interest Rate  
+  - Term  
+  - Annual Income  
+  - Employment Length  
+  - Loan Status  
 
 ---
+
+## Data Preparation (Power Query)
+- Removed irrelevant and high-null columns  
+- Fixed inconsistent data types  
+- Cleaned percentage and text fields  
+- Standardized categorical values  
+- Removed duplicates  
+
+### Derived Features:
+- Loan-to-Income Ratio  
+- Risk Segmentation (Low, Medium, High)  
+
+---
+
+## Data Modeling
+
+A star schema was implemented to improve performance and enable efficient analysis.
+
+- **Fact Table:**
+  - Loans (central table containing all loan transactions)
+
+- **Dimension Tables:**
+  - Dim_Date (Date, Month, Year)
+  - Dim_Income (Income segmentation)
+  - Dim_Loan_Status (Loan outcome classification)
+  - Dim_DTI (Debt-to-Income segmentation)
+
+### Relationships
+- One-to-many relationships from dimension tables to the fact table
+- Enables accurate filtering and interactive reporting in Power BI
+
+This structure ensures:
+- Faster query performance  
+- Clean data organization  
+- Reliable dashboard interactions  
+
+---
+
+## Key Metrics (DAX)
+- Total Loans  
+- Total Defaulted Loans  
+- Default Rate  
+- Average Loan Amount  
+- Risk Segmentation  
+
+---
+
+## Dashboard Features
+- KPI Cards (Total Loans, Default Rate, Avg Loan Amount)  
+- Default Rate by Income Level  
+- Default Rate by Loan Term  
+- Interest Rate vs Default Risk  
+- Interactive filters (Income category)  
+
+---
+
+## Key Insights
+- Middle-income borrowers show the **highest default rate (~6.9%)**  
+- Short-term loans (40 months) have **higher default risk** than long-term loans  
+- Default risk **increases significantly with higher interest rates**  
+- Low-income borrowers show lower default rates, possibly due to smaller loan sizes  
+
+---
+
+## Recommendations
+- Apply stricter credit checks for **middle-income borrowers**  
+- Limit exposure to **high-interest loans**  
+- Encourage **longer repayment terms** to reduce default risk  
+- Implement **risk-based loan approval policies**  
+- Monitor high-risk segments using automated dashboards  
+
+---
+
+## Tools & Technologies
+- Power BI  
+- Power Query  
+- DAX  
+
+---
+
+## Business Impact
+This project helps:
+- Reduce loan default risk  
+- Improve credit decision-making  
+- Identify high-risk customers early  
+- Enhance financial sustainability for cooperative societies  
+
+---
+
 ## Project Status
-* Dataset acquired and reduced to 150,000 rows for performance optimization
-* Relevant features selected (~25 columns)
-* Data cleaning in progress (Power Query)
-* Data modeling (up next)
-* Dashboard development (planned)
-* Insights and reporting (planned)
----
-## Dataset
-* Source: Kaggle (Lending Club Loan Dataset)
-* Contains borrower, loan, and credit-related attributes
----
-## Data Preparation
-* Removed irrelevant and high-null columns
-* Reduced dataset size for performance
-* Fixed data types (numeric, date, text)
-* Standardized categorical values
-* Cleaned percentage and text fields
-* Created derived features:
-  * Loan-to-Income Ratio
-  * Risk Segmentation
----
-## Analysis Plan
-### Loan Overview
-* Total Loans
-* Total Defaulted Loans
-* Default Rate
-
-### Risk Analysis
-* Default rate by income
-* Default rate by loan amount and term
-* Risk segmentation (Low, Medium, High)
-
-### Behavioral Insights
-* Credit behavior vs default
-* Interest rate vs default
-* Time trends
----
-## Tools
-* Power BI
-* Power Query
-* DAX
----
-
-## Expected Outcome
-* Identify high-risk borrower segments
-* Highlight key factors driving loan default
-* Provide actionable recommendations for better lending decisions
+✅ Completed  
